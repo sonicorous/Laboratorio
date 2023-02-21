@@ -1,0 +1,6 @@
+@import "normalize.css";
+@import "scrollsnap.css";
+
+.position-relative {
+    position: relative;
+}

@@ -1,6 +1,5 @@
-@import "normalize.css";
-@import "scrollsnap.css";
+@layer normalize, boostrap, scrollsnap;
 
-.position-relative {
-    position: relative;
-}
+@import url('normalize.css') layer(normalize);
+@import url('boostrap.css') layer(boostrap);
+@import url('scrollsnap.css') layer(scrollsnap);

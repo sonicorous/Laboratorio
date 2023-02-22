@@ -1,10 +1,5 @@
-@layer normalize, boostrap, scrollsnap;
-
-@import url('normalize.css') layer(normalize);
-@import url('boostrap.css') layer(boostrap);
-@import url('scrollsnap.css') layer(scrollsnap);
-
-
+@import url('normalize.css');
+@import url('scrollsnap.css');
 
 .link {
     color: rgb(48, 40, 40);

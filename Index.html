@@ -9,6 +9,35 @@
     <link rel='stylesheet' type='text/css' href='Contect/CSS/style.css'/>
 </head>
 <body>
+    <div>
+        <div>
+            <div class="mt-4" id="div_language">
+                <h2 class="mb-3 text-light">Selecciona el lenguaje</h2>
+                <select class="form-select bg-secondary text-light" id="select_language" onchange="updateCountry()"></select>
+                <select class="form-select bg-secondary text-light mt-2" id="select_dialect"></select>
+            </div>
+            <h2 class="mt-4 text-light">Mensaje</h2>
+                <div class="p-3" style="border: 1px solid gray; height: 300px; border-radius: 8px;">
+                <span id="final" class="text-light"></span>
+                <span id="interim" class="text-secondary"></span>
+            </div>
+            <div class="mt-4">
+                <button class="btn btn-success" id="start">Start</button>
+                <button class="btn btn-danger" id="stop">Stop</button>
+                <p id="status" class="lead mt-3 text-light" style="display: none">Escuchando</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div id="page-wrapper">
+                <h1>Web Speech Synthesis Demo</h1>
+                <p id="msg"></p>
+                <input type="text" name="speech-msg" id="speech-msg" x-webkit-speech>
+                <button id="speak">Speak</button>
+              </div>
+        </div>
+    </div>
     <div class="">
         <h2>
             Carusel tipo 1 Vertical

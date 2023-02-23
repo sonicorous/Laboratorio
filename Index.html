@@ -2,48 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta property="og:site_name" content="Laboratorio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="keywords" content="Laboratorio" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="canonical" href="https://Laboratorio.mx/" />
+    <meta name="twitter:url" content="https://Laboratorio.mx/" />
+    <meta property="og:url" content="https://Laboratorio.mx/" />
+
+    <meta name="twitter:image" content="https://cdn-icons-png.flaticon.com/128/2497/2497867.png" />
+    <meta name="twitter:image:secure_url" content="https://cdn-icons-png.flaticon.com/128/2497/2497867.png" />
+    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/128/2497/2497867.png" />
+    <meta property="og:image:secure_url" content="https://cdn-icons-png.flaticon.com/128/2497/2497867.png" />
+    
+    <meta name="twitter:title" content="Laboratorio" />
+    <meta property="og:title" content="Laboratorio" />
+    <meta name="description" content="Laboratorio" />
+    <meta name="twitter:description" content="Laboratorio" />
+    <meta property="og:description" content="Laboratorio" />
+    
+    <title>Laboratorio </title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/2497/2497867.png" type="image/svg+xml">
+
+    <link rel='stylesheet' type='text/css' href='Contect/CSS/boostrap.css'/>
     <link rel='stylesheet' type='text/css' href='Contect/CSS/style.css'/>
 </head>
 <body>
-    <div>
-        <div>
-            <div class="mt-4" id="div_language">
-                <h2 class="mb-3 text-light">Selecciona el lenguaje</h2>
-                <select class="form-select bg-secondary text-light" id="select_language" onchange="updateCountry()"></select>
-                <select class="form-select bg-secondary text-light mt-2" id="select_dialect"></select>
-            </div>
-            <h2 class="mt-4 text-light">Mensaje</h2>
-                <div class="p-3" style="border: 1px solid gray; height: 300px; border-radius: 8px;">
-                <span id="final" class="text-light"></span>
-                <span id="interim" class="text-secondary"></span>
-            </div>
-            <div class="mt-4">
-                <button class="btn btn-success" id="start">Start</button>
-                <button class="btn btn-danger" id="stop">Stop</button>
-                <p id="status" class="lead mt-3 text-light" style="display: none">Escuchando</p>
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">
+                Conversacion
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="conversacion" id="final">
+                <div class="item-conversacion">Texto</div>
             </div>
         </div>
     </div>
-    <div>
-        <div>
-            <div id="page-wrapper">
-                <h1>Web Speech Synthesis Demo</h1>
-                <p id="msg"></p>
-                <input type="text" name="speech-msg" id="speech-msg" x-webkit-speech>
-                <button id="speak">Speak</button>
-              </div>
+    <div class="class">
+        <div class="col text-center">
+            <p id="status" class="lead mt-3" style="display: none;">... ESCUCHANDO ...</p>
         </div>
     </div>
-    <div class="">
+    <div class="row mt-4">
+        <div class="col text-center">
+            <button type="button" class="btn-success" id="start">Start</button>
+        </div>
+        <div class="col text-center">
+            <button type="button" class="btn-danger" id="stop">Stop</button>
+        </div>
+    </div>
+
+    <div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col text-center" id="page-wrapper">
+                <h1>Voz directa</h1>
+                <input type="text" class="form-control" id="speech-msg" x-webkit-speech>
+                <button id="speak" class="btn-success mt-3">Hablar</button>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="mt-5">
         <h2>
             Carusel tipo 1 Vertical
-            <br>
-            <br>
-            <br>
             <button type="text" class="link tip" data-tooltip="hola">Hola</button>
         </h2>
         <div class="position-relative">
@@ -122,5 +159,6 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script type="text/javascript" src="Contect/JS/function.js"></script>
 </html>

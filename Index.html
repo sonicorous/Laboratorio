@@ -39,6 +39,76 @@
     <link rel='stylesheet' type='text/css' href='Contect/CSS/style.css'/>
 </head>
 <body>
+    <div id="floating-panel">
+        <b>Modo de viaje: </b>
+        <select id="mode">
+           <option value="DRIVING">Automovil</option>
+           <option value="WALKING">Caminando</option>
+           <option value="BICYCLING">Bicicleta</option>
+           <option value="TRANSIT">Trasporte público</option>
+        </select>
+        <input type="text" value="Seat furia motors CDMX" id="idVAlIr"/>
+     </div>
+     <div id='map' style='width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;'>
+     </div>
+     <script>
+        function initMap() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+            document.getElementById("mode").addEventListener("change", () => {
+              navigator.geolocation.getCurrentPosition(showPosition);
+            });
+            document.getElementById("idVAlIr").addEventListener("change", () => {
+              navigator.geolocation.getCurrentPosition(showPosition);
+            });
+          } else {
+            alert("Geolocation is not supported by this browser.");
+          }
+        }
+        
+        function showPosition(position) {
+          var lat = position.coords.latitude;
+          var lng = position.coords.longitude;
+          var latlng = new google.maps.LatLng(lat, lng);
+          var mapOptions = {
+            zoom: 15,
+            center: latlng
+          };
+          var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+          
+          var directionsService = new google.maps.DirectionsService();
+          var directionsDisplay =  new google.maps.DirectionsRenderer({
+            draggable: true,
+            map,
+            panel: document.getElementById("map"),
+          });
+          
+          var request = {
+            origin: latlng,
+            destination: $('#idVAlIr').val(),
+            travelMode: $('#mode').val(),
+            provideRouteAlternatives: true,
+            drivingOptions: {
+              departureTime: new Date(Date.now()),
+              trafficModel: 'optimistic'
+            }
+          };
+          
+          directionsService.route(request, function(result, status) {
+            if (status == 'OK') {
+              directionsDisplay.setDirections(result);
+            }
+          });
+        }
+        
+     </script>
+     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1K9ICaMd5lvI7p2D-FJlDQrKTaV5D1BE&language=es&callback=initMap&sensor=false"></script>
+
+     
     <div class="row">
         <div class="col">
             <h2 class="text-center">
@@ -158,6 +228,11 @@
             </div>
         </div>
     </div>
+
+
+
+
+    
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script type="text/javascript" src="Contect/JS/function.js"></script>
